@@ -1,0 +1,18 @@
+{
+    "cortex-debug.variableUseNaturalFormat": false,
+    "files.associations": {
+        "*.inc": "8051",
+        "math.h": "c",
+        "main.h": "c",
+        "stdint.h": "c",
+        "stdint-gcc.h": "c",
+        "adc.h": "c",
+        "tim.h": "c",
+        "gpio.h": "c",
+        "application.h": "c",
+        "usart.h": "c",
+        "spi.h": "c",
+        "global_variables.h": "c"
+    },
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
+}

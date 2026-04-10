@@ -1,0 +1,270 @@
+ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"application.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "./Application/Src/application.c"
+  18              		.section	.text.controller_init,"ax",%progbits
+  19              		.align	1
+  20              		.global	controller_init
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	controller_init:
+  26              	.LFB65:
+   1:./Application/Src/application.c **** #include <application.h>
+   2:./Application/Src/application.c **** 
+   3:./Application/Src/application.c **** VOFA_REPORT vofa;
+   4:./Application/Src/application.c **** uint16_t adc1_buffer[3] = {0}; // only three ports used for dma
+   5:./Application/Src/application.c **** 
+   6:./Application/Src/application.c **** void controller_init(void){
+  27              		.loc 1 6 27 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 10B5     		push	{r4, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+   7:./Application/Src/application.c ****     memset(&vofa, 0, sizeof(vofa));
+  36              		.loc 1 7 5 view .LVU1
+  37 0002 064C     		ldr	r4, .L3
+  38 0004 2C22     		movs	r2, #44
+  39 0006 0021     		movs	r1, #0
+  40 0008 2046     		mov	r0, r4
+  41 000a FFF7FEFF 		bl	memset
+  42              	.LVL0:
+   8:./Application/Src/application.c ****     vofa.vofaTail[0] = 0x00;
+  43              		.loc 1 8 5 view .LVU2
+   9:./Application/Src/application.c ****     vofa.vofaTail[1] = 0x00;
+  44              		.loc 1 9 5 view .LVU3
+  10:./Application/Src/application.c ****     vofa.vofaTail[2] = 0x80;
+  45              		.loc 1 10 5 view .LVU4
+  46              		.loc 1 10 22 is_stmt 0 view .LVU5
+  47 000e 8023     		movs	r3, #128
+  48 0010 84F82A30 		strb	r3, [r4, #42]
+ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s 			page 2
+
+
+  11:./Application/Src/application.c ****     vofa.vofaTail[3] = 0x7f;
+  49              		.loc 1 11 5 is_stmt 1 view .LVU6
+  50              		.loc 1 11 22 is_stmt 0 view .LVU7
+  51 0014 7F23     		movs	r3, #127
+  52 0016 84F82B30 		strb	r3, [r4, #43]
+  12:./Application/Src/application.c **** }
+  53              		.loc 1 12 1 view .LVU8
+  54 001a 10BD     		pop	{r4, pc}
+  55              	.L4:
+  56              		.align	2
+  57              	.L3:
+  58 001c 00000000 		.word	vofa
+  59              		.cfi_endproc
+  60              	.LFE65:
+  62              		.section	.text.controller_step,"ax",%progbits
+  63              		.align	1
+  64              		.global	controller_step
+  65              		.syntax unified
+  66              		.thumb
+  67              		.thumb_func
+  69              	controller_step:
+  70              	.LVL1:
+  71              	.LFB66:
+  13:./Application/Src/application.c **** 
+  14:./Application/Src/application.c **** 
+  15:./Application/Src/application.c **** void controller_step(const float dt){
+  72              		.loc 1 15 37 is_stmt 1 view -0
+  73              		.cfi_startproc
+  74              		@ args = 0, pretend = 0, frame = 0
+  75              		@ frame_needed = 0, uses_anonymous_args = 0
+  76              		.loc 1 15 37 is_stmt 0 view .LVU10
+  77 0000 70B5     		push	{r4, r5, r6, lr}
+  78              	.LCFI1:
+  79              		.cfi_def_cfa_offset 16
+  80              		.cfi_offset 4, -16
+  81              		.cfi_offset 5, -12
+  82              		.cfi_offset 6, -8
+  83              		.cfi_offset 14, -4
+  16:./Application/Src/application.c ****     // vofa.val[0]  = adc1_buffer[0] * 1.25f / 4095.0f / 20.0f; // Simulate some changing data
+  17:./Application/Src/application.c ****     // vofa.val[1]  = adc1_buffer[1] * 1.25f / 4095.0f / 20.0f; // Simulate some changing data
+  18:./Application/Src/application.c **** 
+  19:./Application/Src/application.c ****     vofa.val[0]  = adc1_buffer[0] / 4095.0f * 3.3f / 20.0f; // the actual volatge now  
+  84              		.loc 1 19 5 is_stmt 1 view .LVU11
+  85              		.loc 1 19 31 is_stmt 0 view .LVU12
+  86 0002 1C4E     		ldr	r6, .L9
+  87              		.loc 1 19 35 view .LVU13
+  88 0004 3088     		ldrh	r0, [r6]
+  89              	.LVL2:
+  90              		.loc 1 19 35 view .LVU14
+  91 0006 FFF7FEFF 		bl	__aeabi_i2f
+  92              	.LVL3:
+  93 000a 1B49     		ldr	r1, .L9+4
+  94 000c FFF7FEFF 		bl	__aeabi_fdiv
+  95              	.LVL4:
+  96              		.loc 1 19 45 view .LVU15
+  97 0010 1A49     		ldr	r1, .L9+8
+  98 0012 FFF7FEFF 		bl	__aeabi_fmul
+ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s 			page 3
+
+
+  99              	.LVL5:
+ 100              		.loc 1 19 52 view .LVU16
+ 101 0016 1A49     		ldr	r1, .L9+12
+ 102 0018 FFF7FEFF 		bl	__aeabi_fdiv
+ 103              	.LVL6:
+ 104 001c 0546     		mov	r5, r0
+ 105              		.loc 1 19 18 view .LVU17
+ 106 001e 194C     		ldr	r4, .L9+16
+ 107 0020 2060     		str	r0, [r4]	@ float
+  20:./Application/Src/application.c ****     vofa.val[1]  = (float)adc1_buffer[1] / 4095.0f* 3.3f * 11.0f;
+ 108              		.loc 1 20 5 is_stmt 1 view .LVU18
+ 109              		.loc 1 20 20 is_stmt 0 view .LVU19
+ 110 0022 7088     		ldrh	r0, [r6, #2]
+ 111 0024 FFF7FEFF 		bl	__aeabi_ui2f
+ 112              	.LVL7:
+ 113              		.loc 1 20 42 view .LVU20
+ 114 0028 1349     		ldr	r1, .L9+4
+ 115 002a FFF7FEFF 		bl	__aeabi_fdiv
+ 116              	.LVL8:
+ 117              		.loc 1 20 51 view .LVU21
+ 118 002e 1349     		ldr	r1, .L9+8
+ 119 0030 FFF7FEFF 		bl	__aeabi_fmul
+ 120              	.LVL9:
+ 121              		.loc 1 20 58 view .LVU22
+ 122 0034 1449     		ldr	r1, .L9+20
+ 123 0036 FFF7FEFF 		bl	__aeabi_fmul
+ 124              	.LVL10:
+ 125              		.loc 1 20 18 view .LVU23
+ 126 003a 6060     		str	r0, [r4, #4]	@ float
+  21:./Application/Src/application.c ****     vofa.val[2]  = (vofa.val[0])/0.005f; // current calculated from voltage drop across 5mOhm resis
+ 127              		.loc 1 21 5 is_stmt 1 view .LVU24
+ 128              		.loc 1 21 33 is_stmt 0 view .LVU25
+ 129 003c 1349     		ldr	r1, .L9+24
+ 130 003e 2846     		mov	r0, r5
+ 131 0040 FFF7FEFF 		bl	__aeabi_fdiv
+ 132              	.LVL11:
+ 133              		.loc 1 21 18 view .LVU26
+ 134 0044 A060     		str	r0, [r4, #8]	@ float
+  22:./Application/Src/application.c ****     vofa.val[3]  = adc1_buffer[2] / 4095.0f * 3.3f; // Vref, should be around 1.2V, used for calibr
+ 135              		.loc 1 22 5 is_stmt 1 view .LVU27
+ 136              		.loc 1 22 35 is_stmt 0 view .LVU28
+ 137 0046 B088     		ldrh	r0, [r6, #4]
+ 138 0048 FFF7FEFF 		bl	__aeabi_i2f
+ 139              	.LVL12:
+ 140 004c 0A49     		ldr	r1, .L9+4
+ 141 004e FFF7FEFF 		bl	__aeabi_fdiv
+ 142              	.LVL13:
+ 143              		.loc 1 22 45 view .LVU29
+ 144 0052 0A49     		ldr	r1, .L9+8
+ 145 0054 FFF7FEFF 		bl	__aeabi_fmul
+ 146              	.LVL14:
+ 147              		.loc 1 22 18 view .LVU30
+ 148 0058 E060     		str	r0, [r4, #12]	@ float
+  23:./Application/Src/application.c ****     if (huart1.gState == HAL_UART_STATE_READY) {
+ 149              		.loc 1 23 5 is_stmt 1 view .LVU31
+ 150              		.loc 1 23 15 is_stmt 0 view .LVU32
+ 151 005a 0D4B     		ldr	r3, .L9+28
+ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s 			page 4
+
+
+ 152 005c 93F84130 		ldrb	r3, [r3, #65]	@ zero_extendqisi2
+ 153              		.loc 1 23 8 view .LVU33
+ 154 0060 202B     		cmp	r3, #32
+ 155 0062 00D0     		beq	.L8
+ 156              	.L5:
+  24:./Application/Src/application.c ****         HAL_UART_Transmit_DMA(&huart1, (uint8_t*)&vofa, sizeof(vofa));
+  25:./Application/Src/application.c ****     }
+  26:./Application/Src/application.c **** }...
+ 157              		.loc 1 26 1 view .LVU34
+ 158 0064 70BD     		pop	{r4, r5, r6, pc}
+ 159              	.L8:
+  24:./Application/Src/application.c ****         HAL_UART_Transmit_DMA(&huart1, (uint8_t*)&vofa, sizeof(vofa));
+ 160              		.loc 1 24 9 is_stmt 1 view .LVU35
+ 161 0066 2C22     		movs	r2, #44
+ 162 0068 2146     		mov	r1, r4
+ 163 006a 0948     		ldr	r0, .L9+28
+ 164 006c FFF7FEFF 		bl	HAL_UART_Transmit_DMA
+ 165              	.LVL15:
+ 166              		.loc 1 26 1 is_stmt 0 view .LVU36
+ 167 0070 F8E7     		b	.L5
+ 168              	.L10:
+ 169 0072 00BF     		.align	2
+ 170              	.L9:
+ 171 0074 00000000 		.word	adc1_buffer
+ 172 0078 00F07F45 		.word	1166012416
+ 173 007c 33335340 		.word	1079194419
+ 174 0080 0000A041 		.word	1101004800
+ 175 0084 00000000 		.word	vofa
+ 176 0088 00003041 		.word	1093664768
+ 177 008c 0AD7A33B 		.word	1000593162
+ 178 0090 00000000 		.word	huart1
+ 179              		.cfi_endproc
+ 180              	.LFE66:
+ 182              		.global	adc1_buffer
+ 183              		.section	.bss.adc1_buffer,"aw",%nobits
+ 184              		.align	2
+ 187              	adc1_buffer:
+ 188 0000 00000000 		.space	6
+ 188      0000
+ 189              		.global	vofa
+ 190              		.section	.bss.vofa,"aw",%nobits
+ 191              		.align	2
+ 194              	vofa:
+ 195 0000 00000000 		.space	44
+ 195      00000000 
+ 195      00000000 
+ 195      00000000 
+ 195      00000000 
+ 196              		.text
+ 197              	.Letext0:
+ 198              		.file 2 "C:/thirdpartyLibs/arm-gnu-toolchain-15.2/arm-none-eabi/include/machine/_default_types.h"
+ 199              		.file 3 "C:/thirdpartyLibs/arm-gnu-toolchain-15.2/arm-none-eabi/include/sys/_stdint.h"
+ 200              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 201              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 202              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 203              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 204              		.file 8 "Application/Inc/application.h"
+ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s 			page 5
+
+
+ 205              		.file 9 "Core/Inc/usart.h"
+ 206              		.file 10 "C:/thirdpartyLibs/arm-gnu-toolchain-15.2/arm-none-eabi/include/string.h"
+ 207              		.file 11 "<built-in>"
+ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 application.c
+C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s:19     .text.controller_init:00000000 $t
+C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s:25     .text.controller_init:00000000 controller_init
+C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s:58     .text.controller_init:0000001c $d
+C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s:194    .bss.vofa:00000000 vofa
+C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s:63     .text.controller_step:00000000 $t
+C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s:69     .text.controller_step:00000000 controller_step
+C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s:171    .text.controller_step:00000074 $d
+C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s:187    .bss.adc1_buffer:00000000 adc1_buffer
+C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s:184    .bss.adc1_buffer:00000000 $d
+C:\Users\Xuleo\AppData\Local\Temp\cctM8PSd.s:191    .bss.vofa:00000000 $d
+
+UNDEFINED SYMBOLS
+memset
+__aeabi_i2f
+__aeabi_fdiv
+__aeabi_fmul
+__aeabi_ui2f
+HAL_UART_Transmit_DMA
+huart1
