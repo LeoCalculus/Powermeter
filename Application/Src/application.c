@@ -10,6 +10,8 @@ void controller_init(void){
     vofa.vofaTail[1] = 0x00;
     vofa.vofaTail[2] = 0x80;
     vofa.vofaTail[3] = 0x7f;
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+    __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, 200); // start with 10% duty cycle
 }
 
 

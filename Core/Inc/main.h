@@ -59,7 +59,13 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
-
+#define CAN_FILTER(x) ((x) << 3)
+#define CAN_FIFO_0 (0 << 2)
+#define CAN_FIFO_1 (1 << 2)
+#define CAN_STDID (0 << 1)
+#define CAN_EXTID (1 << 1)
+#define CAN_DATA_TYPE (0 << 0)
+#define CAN_REMOTE_TYPE (1 << 0)
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

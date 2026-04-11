@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <adc.h>
+#include <tim.h>
 
 typedef struct __attribute__((packed)) VOFA_REPORT{
     float val[10]; // used + reserved
