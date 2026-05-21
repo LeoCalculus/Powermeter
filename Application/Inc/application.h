@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <adc.h>
 #include <tim.h>
+#include <gpio.h>
+#include <stm32f1xx_hal_uart.h>
 
 typedef struct __attribute__((packed)) VOFA_REPORT{
     float val[10]; // used + reserved

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
+ARM GAS  /tmp/ccq9ugsz.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
   29:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** #ifdef HAL_RCC_MODULE_ENABLED
   30:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** 
   31:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** /** @defgroup RCCEx RCCEx
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 2
+ARM GAS  /tmp/ccq9ugsz.s 			page 2
 
 
   32:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   * @brief RCC Extension HAL module driver.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
   86:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   *
   87:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   * @note   Care must be taken when HAL_RCCEx_PeriphCLKConfig() is used to select
   88:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   *         the RTC clock source; in this case the Backup domain will be reset in
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 3
+ARM GAS  /tmp/ccq9ugsz.s 			page 3
 
 
   89:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   *         order to modify the RTC Clock source, as consequence RTC registers (including
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
   56              		.loc 1 114 5 view .LVU8
  115:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** 
  116:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****     /* As soon as function is called to change RTC clock source, activation of the
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 4
+ARM GAS  /tmp/ccq9ugsz.s 			page 4
 
 
  117:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****        power domain is done. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  132:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** 
  133:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****       while (HAL_IS_BIT_CLR(PWR->CR, PWR_CR_DBP))
  134:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****       {
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 5
+ARM GAS  /tmp/ccq9ugsz.s 			page 5
 
 
  135:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****         if ((HAL_GetTick() - tickstart) > RCC_DBP_TIMEOUT_VALUE)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  153:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** 
  154:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****       /* Wait for LSERDY if LSE was enabled */
  155:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****       if (HAL_IS_BIT_SET(temp_reg, RCC_BDCR_LSEON))
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 6
+ARM GAS  /tmp/ccq9ugsz.s 			page 6
 
 
  132              		.loc 1 155 7 is_stmt 1 view .LVU38
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  183:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****     assert_param(IS_RCC_ADCPLLCLK_DIV(PeriphClkInit->AdcClockSelection));
  159              		.loc 1 183 5 is_stmt 1 view .LVU47
  184:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 7
+ARM GAS  /tmp/ccq9ugsz.s 			page 7
 
 
  185:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****     /* Configure the ADC clock source */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  231:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****           (__HAL_RCC_HSE_GET_PREDIV2() != PeriphClkInit->PLLI2S.HSEPrediv2Value))
  232:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****       {
  233:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****         return HAL_ERROR;
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 8
+ARM GAS  /tmp/ccq9ugsz.s 			page 8
 
 
  234:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****       }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  177 00a2 5368     		ldr	r3, [r2, #4]
  178 00a4 23F48003 		bic	r3, r3, #4194304
  179 00a8 E168     		ldr	r1, [r4, #12]
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 9
+ARM GAS  /tmp/ccq9ugsz.s 			page 9
 
 
  180 00aa 0B43     		orrs	r3, r3, r1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  135:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****         {
  222              		.loc 1 135 9 view .LVU63
  135:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****         {
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 10
+ARM GAS  /tmp/ccq9ugsz.s 			page 10
 
 
  223              		.loc 1 135 14 is_stmt 0 view .LVU64
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  262              		.loc 1 165 20 view .LVU79
  263 0100 0320     		movs	r0, #3
  264 0102 D5E7     		b	.L6
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 11
+ARM GAS  /tmp/ccq9ugsz.s 			page 11
 
 
  265              	.LVL21:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  304              		.loc 1 297 3 view .LVU85
  305              		.loc 1 297 39 is_stmt 0 view .LVU86
  306 0000 0123     		movs	r3, #1
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 12
+ARM GAS  /tmp/ccq9ugsz.s 			page 12
 
 
  307 0002 0360     		str	r3, [r0]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  329:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** 
  330:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F102x6) || defined(STM32F102xB) || defined(STM32F103x6)\
  331:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****  || defined(STM32F103xB) || defined(STM32F103xE) || defined(STM32F103xG)\
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 13
+ARM GAS  /tmp/ccq9ugsz.s 			page 13
 
 
  332:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****  || defined(STM32F105xC) || defined(STM32F107xC)
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  359:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
  360:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
  361:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S2 I2S2 peripheral clock
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 14
+ARM GAS  /tmp/ccq9ugsz.s 			page 14
 
 
  362:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   *            @arg @ref RCC_PERIPHCLK_I2S3 I2S3 peripheral clock
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  373              		.loc 1 401 3 view .LVU109
  402:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** 
  403:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   /* Check the parameters */
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 15
+ARM GAS  /tmp/ccq9ugsz.s 			page 15
 
 
  404:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   assert_param(IS_RCC_PERIPHCLOCK(PeriphClk));
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  421:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****         {
  422:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** #if defined(STM32F105xC) || defined(STM32F107xC) || defined(STM32F100xB)\
  423:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****  || defined(STM32F100xE)
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 16
+ARM GAS  /tmp/ccq9ugsz.s 			page 16
 
 
  424:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****           prediv1 = aPredivFactorTable[(uint32_t)(RCC->CFGR2 & RCC_CFGR2_PREDIV1) >> RCC_CFGR2_PRED
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  457:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****         }
  458:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****         else
  459:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****         {
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 17
+ARM GAS  /tmp/ccq9ugsz.s 			page 17
 
 
  460:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****           /* HSI used as PLL clock source : PLLCLK = HSI/2 * PLLMUL */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  456              	.LVL39:
  461:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****         }
  457              		.loc 1 461 18 view .LVU141
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 18
+ARM GAS  /tmp/ccq9ugsz.s 			page 18
 
 
  458 005e F0E7     		b	.L31
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  539:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****           frequency = (uint32_t)(2 * ((HSE_VALUE / prediv2) * pll3mul));
  540:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****         }
  541:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****       }
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 19
+ARM GAS  /tmp/ccq9ugsz.s 			page 19
 
 
  542:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c **** #endif /* STM32F103xE || STM32F103xG */
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  492 0082 F4D0     		beq	.L32
  554:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****       }
  493              		.loc 1 554 19 view .LVU154
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 20
+ARM GAS  /tmp/ccq9ugsz.s 			page 20
 
 
  494 0084 4FF40040 		mov	r0, #32768
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  579:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****       break;
  580:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****     }
  581:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   }
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 21
+ARM GAS  /tmp/ccq9ugsz.s 			page 21
 
 
  582:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ****   return (frequency);
@@ -1258,38 +1258,38 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 1
  573      06070809 
  573      0A0B0C0D 
  573      0E
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 22
+ARM GAS  /tmp/ccq9ugsz.s 			page 22
 
 
  574 000d 0F1010   		.ascii	"\017\020\020"
  575              		.text
  576              	.Letext0:
- 577              		.file 2 "C:/thirdpartyLibs/arm-gnu-toolchain-15.2/arm-none-eabi/include/machine/_default_types.h"
- 578              		.file 3 "C:/thirdpartyLibs/arm-gnu-toolchain-15.2/arm-none-eabi/include/sys/_stdint.h"
+ 577              		.file 2 "/home/leo/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/machine/
+ 578              		.file 3 "/home/leo/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys/_std
  579              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
  580              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
  581              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
  582              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
  583              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
  584              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s 			page 23
+ARM GAS  /tmp/ccq9ugsz.s 			page 23
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f1xx_hal_rcc_ex.c
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:19     .text.HAL_RCCEx_PeriphCLKConfig:00000000 $t
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:25     .text.HAL_RCCEx_PeriphCLKConfig:00000000 HAL_RCCEx_PeriphCLKConfig
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:282    .text.HAL_RCCEx_PeriphCLKConfig:00000114 $d
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:289    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 $t
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:295    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 HAL_RCCEx_GetPeriphCLKConfig
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:345    .text.HAL_RCCEx_GetPeriphCLKConfig:00000028 $d
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:350    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 $t
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:356    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 HAL_RCCEx_GetPeriphCLKFreq
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:553    .text.HAL_RCCEx_GetPeriphCLKFreq:000000c0 $d
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:572    .rodata.aPLLMULFactorTable.1:00000000 aPLLMULFactorTable.1
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:566    .rodata.aPredivFactorTable.0:00000000 aPredivFactorTable.0
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:563    .rodata.aPredivFactorTable.0:00000000 $d
-C:\Users\Xuleo\AppData\Local\Temp\ccRKxwxb.s:569    .rodata.aPLLMULFactorTable.1:00000000 $d
+     /tmp/ccq9ugsz.s:19     .text.HAL_RCCEx_PeriphCLKConfig:00000000 $t
+     /tmp/ccq9ugsz.s:25     .text.HAL_RCCEx_PeriphCLKConfig:00000000 HAL_RCCEx_PeriphCLKConfig
+     /tmp/ccq9ugsz.s:282    .text.HAL_RCCEx_PeriphCLKConfig:00000114 $d
+     /tmp/ccq9ugsz.s:289    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 $t
+     /tmp/ccq9ugsz.s:295    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 HAL_RCCEx_GetPeriphCLKConfig
+     /tmp/ccq9ugsz.s:345    .text.HAL_RCCEx_GetPeriphCLKConfig:00000028 $d
+     /tmp/ccq9ugsz.s:350    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 $t
+     /tmp/ccq9ugsz.s:356    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 HAL_RCCEx_GetPeriphCLKFreq
+     /tmp/ccq9ugsz.s:553    .text.HAL_RCCEx_GetPeriphCLKFreq:000000c0 $d
+     /tmp/ccq9ugsz.s:572    .rodata.aPLLMULFactorTable.1:00000000 aPLLMULFactorTable.1
+     /tmp/ccq9ugsz.s:566    .rodata.aPredivFactorTable.0:00000000 aPredivFactorTable.0
+     /tmp/ccq9ugsz.s:563    .rodata.aPredivFactorTable.0:00000000 $d
+     /tmp/ccq9ugsz.s:569    .rodata.aPLLMULFactorTable.1:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick

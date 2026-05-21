@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
+ARM GAS  /tmp/ccrJc63L.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
   30:Core/Src/can.c **** void MX_CAN_Init(void)
   31:Core/Src/can.c **** {
   27              		.loc 1 31 1 view -0
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 2
+ARM GAS  /tmp/ccrJc63L.s 			page 2
 
 
   28              		.cfi_startproc
@@ -111,21 +111,21 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
   60              		.loc 1 46 3 is_stmt 1 view .LVU13
   61              		.loc 1 46 31 is_stmt 0 view .LVU14
   62 001e 0376     		strb	r3, [r0, #24]
-  47:Core/Src/can.c ****   hcan.Init.AutoBusOff = ENABLE;
+  47:Core/Src/can.c ****   hcan.Init.AutoBusOff = DISABLE;
   63              		.loc 1 47 3 is_stmt 1 view .LVU15
   64              		.loc 1 47 24 is_stmt 0 view .LVU16
-  65 0020 0122     		movs	r2, #1
-  66 0022 4276     		strb	r2, [r0, #25]
+  65 0020 4376     		strb	r3, [r0, #25]
   48:Core/Src/can.c ****   hcan.Init.AutoWakeUp = DISABLE;
-  67              		.loc 1 48 3 is_stmt 1 view .LVU17
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 3
+  66              		.loc 1 48 3 is_stmt 1 view .LVU17
+  67              		.loc 1 48 24 is_stmt 0 view .LVU18
+ARM GAS  /tmp/ccrJc63L.s 			page 3
 
 
-  68              		.loc 1 48 24 is_stmt 0 view .LVU18
-  69 0024 8376     		strb	r3, [r0, #26]
+  68 0022 8376     		strb	r3, [r0, #26]
   49:Core/Src/can.c ****   hcan.Init.AutoRetransmission = ENABLE;
-  70              		.loc 1 49 3 is_stmt 1 view .LVU19
-  71              		.loc 1 49 32 is_stmt 0 view .LVU20
+  69              		.loc 1 49 3 is_stmt 1 view .LVU19
+  70              		.loc 1 49 32 is_stmt 0 view .LVU20
+  71 0024 0122     		movs	r2, #1
   72 0026 C276     		strb	r2, [r0, #27]
   50:Core/Src/can.c ****   hcan.Init.ReceiveFifoLocked = DISABLE;
   73              		.loc 1 50 3 is_stmt 1 view .LVU21
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
  111              	.LFB66:
   61:Core/Src/can.c **** 
   62:Core/Src/can.c **** void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 4
+ARM GAS  /tmp/ccrJc63L.s 			page 4
 
 
   63:Core/Src/can.c **** {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
   89:Core/Src/can.c ****     /* CAN1 interrupt Init */
   90:Core/Src/can.c ****     HAL_NVIC_SetPriority(USB_HP_CAN1_TX_IRQn, 0, 0);
   91:Core/Src/can.c ****     HAL_NVIC_EnableIRQ(USB_HP_CAN1_TX_IRQn);
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 5
+ARM GAS  /tmp/ccrJc63L.s 			page 5
 
 
   92:Core/Src/can.c ****     HAL_NVIC_SetPriority(USB_LP_CAN1_RX0_IRQn, 0, 0);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
  175 0038 9B69     		ldr	r3, [r3, #24]
  176 003a 03F00403 		and	r3, r3, #4
  177 003e 0193     		str	r3, [sp, #4]
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 6
+ARM GAS  /tmp/ccrJc63L.s 			page 6
 
 
   74:Core/Src/can.c ****     /**CAN GPIO Configuration
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
  216 006c FFF7FEFF 		bl	HAL_NVIC_SetPriority
  217              	.LVL8:
   91:Core/Src/can.c ****     HAL_NVIC_SetPriority(USB_LP_CAN1_RX0_IRQn, 0, 0);
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 7
+ARM GAS  /tmp/ccrJc63L.s 			page 7
 
 
  218              		.loc 1 91 5 view .LVU65
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
  267 0000 08B5     		push	{r3, lr}
  268              	.LCFI5:
  269              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 8
+ARM GAS  /tmp/ccrJc63L.s 			page 8
 
 
  270              		.cfi_offset 3, -8
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
  120:Core/Src/can.c ****     HAL_NVIC_DisableIRQ(USB_LP_CAN1_RX0_IRQn);
  297              		.loc 1 120 5 is_stmt 1 view .LVU80
  298 0020 1320     		movs	r0, #19
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 9
+ARM GAS  /tmp/ccrJc63L.s 			page 9
 
 
  299 0022 FFF7FEFF 		bl	HAL_NVIC_DisableIRQ
@@ -515,8 +515,8 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
  327              		.text
  328              	.Letext0:
  329              		.file 2 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 330              		.file 3 "C:/thirdpartyLibs/arm-gnu-toolchain-15.2/arm-none-eabi/include/machine/_default_types.h"
- 331              		.file 4 "C:/thirdpartyLibs/arm-gnu-toolchain-15.2/arm-none-eabi/include/sys/_stdint.h"
+ 330              		.file 3 "/home/leo/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/machine/
+ 331              		.file 4 "/home/leo/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys/_std
  332              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
  333              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
  334              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
@@ -524,22 +524,22 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 1
  336              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
  337              		.file 10 "Core/Inc/can.h"
  338              		.file 11 "Core/Inc/main.h"
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s 			page 10
+ARM GAS  /tmp/ccrJc63L.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 can.c
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:19     .text.MX_CAN_Init:00000000 $t
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:25     .text.MX_CAN_Init:00000000 MX_CAN_Init
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:97     .text.MX_CAN_Init:0000003c $d
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:325    .bss.hcan:00000000 hcan
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:103    .text.HAL_CAN_MspInit:00000000 $t
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:109    .text.HAL_CAN_MspInit:00000000 HAL_CAN_MspInit
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:247    .text.HAL_CAN_MspInit:00000098 $d
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:253    .text.HAL_CAN_MspDeInit:00000000 $t
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:259    .text.HAL_CAN_MspDeInit:00000000 HAL_CAN_MspDeInit
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:314    .text.HAL_CAN_MspDeInit:00000034 $d
-C:\Users\Xuleo\AppData\Local\Temp\cc6n7nnk.s:322    .bss.hcan:00000000 $d
+     /tmp/ccrJc63L.s:19     .text.MX_CAN_Init:00000000 $t
+     /tmp/ccrJc63L.s:25     .text.MX_CAN_Init:00000000 MX_CAN_Init
+     /tmp/ccrJc63L.s:97     .text.MX_CAN_Init:0000003c $d
+     /tmp/ccrJc63L.s:325    .bss.hcan:00000000 hcan
+     /tmp/ccrJc63L.s:103    .text.HAL_CAN_MspInit:00000000 $t
+     /tmp/ccrJc63L.s:109    .text.HAL_CAN_MspInit:00000000 HAL_CAN_MspInit
+     /tmp/ccrJc63L.s:247    .text.HAL_CAN_MspInit:00000098 $d
+     /tmp/ccrJc63L.s:253    .text.HAL_CAN_MspDeInit:00000000 $t
+     /tmp/ccrJc63L.s:259    .text.HAL_CAN_MspDeInit:00000000 HAL_CAN_MspDeInit
+     /tmp/ccrJc63L.s:314    .text.HAL_CAN_MspDeInit:00000034 $d
+     /tmp/ccrJc63L.s:322    .bss.hcan:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_CAN_Init

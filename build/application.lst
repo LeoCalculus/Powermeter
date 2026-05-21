@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 1
+ARM GAS  /tmp/ccV3a3oL.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -44,7 +44,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 1
   35              		.cfi_offset 14, -4
    8:./Application/Src/application.c ****     memset(&vofa, 0, sizeof(vofa));
   36              		.loc 1 8 5 view .LVU1
-  37 0002 0A4C     		ldr	r4, .L3
+  37 0002 0D4C     		ldr	r4, .L3
   38 0004 2C22     		movs	r2, #44
   39 0006 0021     		movs	r1, #0
   40 0008 2046     		mov	r0, r4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 1
   45              		.loc 1 11 5 view .LVU4
   46              		.loc 1 11 22 is_stmt 0 view .LVU5
   47 000e 8023     		movs	r3, #128
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 2
+ARM GAS  /tmp/ccV3a3oL.s 			page 2
 
 
   48 0010 84F82A30 		strb	r3, [r4, #42]
@@ -69,7 +69,7 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 1
   52 0016 84F82B30 		strb	r3, [r4, #43]
   13:./Application/Src/application.c ****     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   53              		.loc 1 13 5 is_stmt 1 view .LVU8
-  54 001a 054C     		ldr	r4, .L3+4
+  54 001a 084C     		ldr	r4, .L3+4
   55 001c 0021     		movs	r1, #0
   56 001e 2046     		mov	r0, r4
   57 0020 FFF7FEFF 		bl	HAL_TIM_PWM_Start
@@ -79,256 +79,234 @@ ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 1
   60 0024 2368     		ldr	r3, [r4]
   61 0026 C822     		movs	r2, #200
   62 0028 5A63     		str	r2, [r3, #52]
-  15:./Application/Src/application.c **** }
-  63              		.loc 1 15 1 is_stmt 0 view .LVU10
-  64 002a 10BD     		pop	{r4, pc}
-  65              	.L4:
-  66              		.align	2
-  67              	.L3:
-  68 002c 00000000 		.word	vofa
-  69 0030 00000000 		.word	htim1
-  70              		.cfi_endproc
-  71              	.LFE65:
-  73              		.section	.text.controller_step,"ax",%progbits
-  74              		.align	1
-  75              		.global	controller_step
-  76              		.syntax unified
-  77              		.thumb
-  78              		.thumb_func
-  80              	controller_step:
-  81              	.LVL2:
-  82              	.LFB66:
-  16:./Application/Src/application.c **** 
+  15:./Application/Src/application.c ****     HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET); // turn on the load
+  63              		.loc 1 15 5 view .LVU10
+  64 002a 0022     		movs	r2, #0
+  65 002c 4FF40051 		mov	r1, #8192
+  66 0030 0348     		ldr	r0, .L3+8
+  67 0032 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  68              	.LVL2:
+  16:./Application/Src/application.c **** }
+  69              		.loc 1 16 1 is_stmt 0 view .LVU11
+  70 0036 10BD     		pop	{r4, pc}
+  71              	.L4:
+  72              		.align	2
+  73              	.L3:
+  74 0038 00000000 		.word	vofa
+  75 003c 00000000 		.word	htim1
+  76 0040 00100140 		.word	1073811456
+  77              		.cfi_endproc
+  78              	.LFE65:
+  80              		.section	.text.controller_step,"ax",%progbits
+  81              		.align	1
+  82              		.global	controller_step
+  83              		.syntax unified
+  84              		.thumb
+  85              		.thumb_func
+  87              	controller_step:
+  88              	.LVL3:
+  89              	.LFB66:
   17:./Application/Src/application.c **** 
-  18:./Application/Src/application.c **** void controller_step(const float dt){
-  83              		.loc 1 18 37 is_stmt 1 view -0
-  84              		.cfi_startproc
-  85              		@ args = 0, pretend = 0, frame = 0
-  86              		@ frame_needed = 0, uses_anonymous_args = 0
-  87              		.loc 1 18 37 is_stmt 0 view .LVU12
-  88 0000 70B5     		push	{r4, r5, r6, lr}
-  89              	.LCFI1:
-  90              		.cfi_def_cfa_offset 16
-  91              		.cfi_offset 4, -16
-  92              		.cfi_offset 5, -12
-  93              		.cfi_offset 6, -8
-  94              		.cfi_offset 14, -4
-  19:./Application/Src/application.c ****     // vofa.val[0]  = adc1_buffer[0] * 1.25f / 4095.0f / 20.0f; // Simulate some changing data
-  20:./Application/Src/application.c ****     // vofa.val[1]  = adc1_buffer[1] * 1.25f / 4095.0f / 20.0f; // Simulate some changing data
-  21:./Application/Src/application.c ****     float alpha = 0.5f; // low pass filter coefficient
-  95              		.loc 1 21 5 is_stmt 1 view .LVU13
-  96              	.LVL3:
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 3
+  18:./Application/Src/application.c **** // resistor: 9.83k ohm -> 10k ohm;  984 ohm -> 1k ohm 
+  19:./Application/Src/application.c **** // ADC1_IN2 = VCC * 984 / (984 + 9830) = VCC * 0.090993 => used to derive VCC 
+  20:./Application/Src/application.c **** 
+  21:./Application/Src/application.c **** void controller_step(const float dt){
+  90              		.loc 1 21 37 is_stmt 1 view -0
+  91              		.cfi_startproc
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              		.loc 1 21 37 is_stmt 0 view .LVU13
+  95 0000 70B5     		push	{r4, r5, r6, lr}
+  96              	.LCFI1:
+ARM GAS  /tmp/ccV3a3oL.s 			page 3
 
 
-  22:./Application/Src/application.c ****     float current_current  = ((float)adc1_buffer[0] / 4095.0f * 3.33f - 1.25f)/(20.0f*0.005f); // t
-  97              		.loc 1 22 5 view .LVU14
-  98              		.loc 1 22 49 is_stmt 0 view .LVU15
-  99 0002 274E     		ldr	r6, .L9
- 100              		.loc 1 22 31 view .LVU16
- 101 0004 3088     		ldrh	r0, [r6]
- 102              	.LVL4:
- 103              		.loc 1 22 31 view .LVU17
- 104 0006 FFF7FEFF 		bl	__aeabi_ui2f
- 105              	.LVL5:
- 106              		.loc 1 22 53 view .LVU18
- 107 000a 2649     		ldr	r1, .L9+4
- 108 000c FFF7FEFF 		bl	__aeabi_fdiv
- 109              	.LVL6:
- 110              		.loc 1 22 63 view .LVU19
- 111 0010 2549     		ldr	r1, .L9+8
- 112 0012 FFF7FEFF 		bl	__aeabi_fmul
- 113              	.LVL7:
- 114              		.loc 1 22 71 view .LVU20
- 115 0016 2549     		ldr	r1, .L9+12
- 116 0018 FFF7FEFF 		bl	__aeabi_fsub
- 117              	.LVL8:
- 118              		.loc 1 22 11 view .LVU21
- 119 001c 2449     		ldr	r1, .L9+16
- 120 001e FFF7FEFF 		bl	__aeabi_fdiv
- 121              	.LVL9:
-  23:./Application/Src/application.c ****     vofa.val[0]  = current_current * alpha + old_adc_read * (1.0f - alpha); // low pass filter to s
- 122              		.loc 1 23 5 is_stmt 1 view .LVU22
- 123              		.loc 1 23 36 is_stmt 0 view .LVU23
- 124 0022 4FF07C51 		mov	r1, #1056964608
- 125 0026 FFF7FEFF 		bl	__aeabi_fmul
- 126              	.LVL10:
- 127              		.loc 1 23 36 view .LVU24
- 128 002a 0446     		mov	r4, r0
- 129              		.loc 1 23 59 view .LVU25
- 130 002c 4FF07C51 		mov	r1, #1056964608
- 131 0030 204B     		ldr	r3, .L9+20
- 132 0032 1868     		ldr	r0, [r3]	@ float
- 133 0034 FFF7FEFF 		bl	__aeabi_fmul
- 134              	.LVL11:
- 135 0038 0146     		mov	r1, r0
- 136              		.loc 1 23 44 view .LVU26
- 137 003a 2046     		mov	r0, r4
- 138 003c FFF7FEFF 		bl	__aeabi_fadd
- 139              	.LVL12:
- 140 0040 0546     		mov	r5, r0
- 141              		.loc 1 23 18 view .LVU27
- 142 0042 1D4C     		ldr	r4, .L9+24
- 143 0044 2060     		str	r0, [r4]	@ float
-  24:./Application/Src/application.c ****     vofa.val[1]  = (float)adc1_buffer[1] / 4095.0f* 3.33f * 11.0f;
- 144              		.loc 1 24 5 is_stmt 1 view .LVU28
- 145              		.loc 1 24 20 is_stmt 0 view .LVU29
- 146 0046 7088     		ldrh	r0, [r6, #2]
- 147 0048 FFF7FEFF 		bl	__aeabi_ui2f
- 148              	.LVL13:
- 149              		.loc 1 24 42 view .LVU30
- 150 004c 1549     		ldr	r1, .L9+4
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 4
+  97              		.cfi_def_cfa_offset 16
+  98              		.cfi_offset 4, -16
+  99              		.cfi_offset 5, -12
+ 100              		.cfi_offset 6, -8
+ 101              		.cfi_offset 14, -4
+  22:./Application/Src/application.c ****     // float alpha = 0.5f; // low pass filter coefficient
+  23:./Application/Src/application.c ****     // float current_current  = ((float)adc1_buffer[0] / 4095.0f * 3.33f - 1.25f)/(20.0f*0.005f); /
+  24:./Application/Src/application.c ****     // vofa.val[0]  = current_current * alpha + old_adc_read * (1.0f - alpha); // low pass filter t
+  25:./Application/Src/application.c ****     // vofa.val[1]  = (float)adc1_buffer[1] / 4095.0f* 3.33f * 11.0f;
+  26:./Application/Src/application.c ****     // vofa.val[2]  = vofa.val[0] * vofa.val[1]; // current calculated from voltage drop across 5mO
+  27:./Application/Src/application.c ****     // vofa.val[3]  = (float)adc1_buffer[2] / 4095.0f * 3.33f; // Vref, should be around 1.2V, used
+  28:./Application/Src/application.c ****     
+  29:./Application/Src/application.c ****     // define vofa 0 for the voltage reading: (984+9830)/984=10.9898
+  30:./Application/Src/application.c ****     vofa.val[0]  = (float)adc1_buffer[1] / 4095.0f * 3.0f * 11.0f; // voltage reading, with a volta
+ 102              		.loc 1 30 5 is_stmt 1 view .LVU14
+ 103              		.loc 1 30 38 is_stmt 0 view .LVU15
+ 104 0002 1A4E     		ldr	r6, .L9
+ 105              		.loc 1 30 20 view .LVU16
+ 106 0004 7088     		ldrh	r0, [r6, #2]
+ 107              	.LVL4:
+ 108              		.loc 1 30 20 view .LVU17
+ 109 0006 FFF7FEFF 		bl	__aeabi_ui2f
+ 110              	.LVL5:
+ 111              		.loc 1 30 42 view .LVU18
+ 112 000a 1949     		ldr	r1, .L9+4
+ 113 000c FFF7FEFF 		bl	__aeabi_fdiv
+ 114              	.LVL6:
+ 115              		.loc 1 30 52 view .LVU19
+ 116 0010 1849     		ldr	r1, .L9+8
+ 117 0012 FFF7FEFF 		bl	__aeabi_fmul
+ 118              	.LVL7:
+ 119              		.loc 1 30 59 view .LVU20
+ 120 0016 1849     		ldr	r1, .L9+12
+ 121 0018 FFF7FEFF 		bl	__aeabi_fmul
+ 122              	.LVL8:
+ 123 001c 0446     		mov	r4, r0
+ 124              		.loc 1 30 18 view .LVU21
+ 125 001e 174D     		ldr	r5, .L9+16
+ 126 0020 2860     		str	r0, [r5]	@ float
+  31:./Application/Src/application.c ****     // if we have 1A -> 1A * 0.01 * 20 + 1.24V = ADC1_IN1 so I = (ADC1_IN1-1.24f) / (0.01 * 20) = A
+  32:./Application/Src/application.c ****     vofa.val[1]  = ((float)adc1_buffer[0] / 4095.0f * 3.0f - 1.24f) * 5.0f;
+ 127              		.loc 1 32 5 is_stmt 1 view .LVU22
+ 128              		.loc 1 32 21 is_stmt 0 view .LVU23
+ 129 0022 3088     		ldrh	r0, [r6]
+ 130 0024 FFF7FEFF 		bl	__aeabi_ui2f
+ 131              	.LVL9:
+ 132              		.loc 1 32 43 view .LVU24
+ 133 0028 1149     		ldr	r1, .L9+4
+ 134 002a FFF7FEFF 		bl	__aeabi_fdiv
+ 135              	.LVL10:
+ 136              		.loc 1 32 53 view .LVU25
+ 137 002e 1149     		ldr	r1, .L9+8
+ 138 0030 FFF7FEFF 		bl	__aeabi_fmul
+ 139              	.LVL11:
+ 140              		.loc 1 32 60 view .LVU26
+ 141 0034 1249     		ldr	r1, .L9+20
+ 142 0036 FFF7FEFF 		bl	__aeabi_fsub
+ARM GAS  /tmp/ccV3a3oL.s 			page 4
 
 
- 151 004e FFF7FEFF 		bl	__aeabi_fdiv
- 152              	.LVL14:
- 153              		.loc 1 24 51 view .LVU31
- 154 0052 1549     		ldr	r1, .L9+8
- 155 0054 FFF7FEFF 		bl	__aeabi_fmul
- 156              	.LVL15:
- 157              		.loc 1 24 59 view .LVU32
- 158 0058 1849     		ldr	r1, .L9+28
- 159 005a FFF7FEFF 		bl	__aeabi_fmul
- 160              	.LVL16:
- 161 005e 0146     		mov	r1, r0
- 162              		.loc 1 24 18 view .LVU33
- 163 0060 6060     		str	r0, [r4, #4]	@ float
-  25:./Application/Src/application.c ****     vofa.val[2]  = vofa.val[0] * vofa.val[1]; // current calculated from voltage drop across 5mOhm 
- 164              		.loc 1 25 5 is_stmt 1 view .LVU34
- 165              		.loc 1 25 32 is_stmt 0 view .LVU35
- 166 0062 2846     		mov	r0, r5
- 167 0064 FFF7FEFF 		bl	__aeabi_fmul
- 168              	.LVL17:
- 169              		.loc 1 25 18 view .LVU36
- 170 0068 A060     		str	r0, [r4, #8]	@ float
-  26:./Application/Src/application.c ****     vofa.val[3]  = (float)adc1_buffer[2] / 4095.0f * 3.33f; // Vref, should be around 1.2V, used fo
- 171              		.loc 1 26 5 is_stmt 1 view .LVU37
- 172              		.loc 1 26 20 is_stmt 0 view .LVU38
- 173 006a B088     		ldrh	r0, [r6, #4]
- 174 006c FFF7FEFF 		bl	__aeabi_ui2f
- 175              	.LVL18:
- 176              		.loc 1 26 42 view .LVU39
- 177 0070 0C49     		ldr	r1, .L9+4
- 178 0072 FFF7FEFF 		bl	__aeabi_fdiv
- 179              	.LVL19:
- 180              		.loc 1 26 52 view .LVU40
- 181 0076 0C49     		ldr	r1, .L9+8
- 182 0078 FFF7FEFF 		bl	__aeabi_fmul
- 183              	.LVL20:
- 184              		.loc 1 26 18 view .LVU41
- 185 007c E060     		str	r0, [r4, #12]	@ float
-  27:./Application/Src/application.c ****     if (huart1.gState == HAL_UART_STATE_READY) {
- 186              		.loc 1 27 5 is_stmt 1 view .LVU42
- 187              		.loc 1 27 15 is_stmt 0 view .LVU43
- 188 007e 104B     		ldr	r3, .L9+32
- 189 0080 93F84130 		ldrb	r3, [r3, #65]	@ zero_extendqisi2
- 190              		.loc 1 27 8 view .LVU44
- 191 0084 202B     		cmp	r3, #32
- 192 0086 04D0     		beq	.L8
- 193              	.L6:
-  28:./Application/Src/application.c ****         HAL_UART_Transmit_DMA(&huart1, (uint8_t*)&vofa, sizeof(vofa));
-  29:./Application/Src/application.c ****     }
-  30:./Application/Src/application.c ****     old_adc_read = vofa.val[0];
- 194              		.loc 1 30 5 is_stmt 1 view .LVU45
- 195              		.loc 1 30 28 is_stmt 0 view .LVU46
- 196 0088 0B4B     		ldr	r3, .L9+24
- 197 008a 1A68     		ldr	r2, [r3]	@ float
- 198              		.loc 1 30 18 view .LVU47
- 199 008c 094B     		ldr	r3, .L9+20
- 200 008e 1A60     		str	r2, [r3]	@ float
-  31:./Application/Src/application.c **** }...
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 5
+ 143              	.LVL12:
+ 144              		.loc 1 32 69 view .LVU27
+ 145 003a 1249     		ldr	r1, .L9+24
+ 146 003c FFF7FEFF 		bl	__aeabi_fmul
+ 147              	.LVL13:
+ 148 0040 0146     		mov	r1, r0
+ 149              		.loc 1 32 18 view .LVU28
+ 150 0042 6860     		str	r0, [r5, #4]	@ float
+  33:./Application/Src/application.c ****     vofa.val[2]  = vofa.val[0] * vofa.val[1]; // power reading
+ 151              		.loc 1 33 5 is_stmt 1 view .LVU29
+ 152              		.loc 1 33 32 is_stmt 0 view .LVU30
+ 153 0044 2046     		mov	r0, r4
+ 154 0046 FFF7FEFF 		bl	__aeabi_fmul
+ 155              	.LVL14:
+ 156              		.loc 1 33 18 view .LVU31
+ 157 004a A860     		str	r0, [r5, #8]	@ float
+  34:./Application/Src/application.c **** 
+  35:./Application/Src/application.c ****     if (huart1.gState == HAL_UART_STATE_READY) {
+ 158              		.loc 1 35 5 is_stmt 1 view .LVU32
+ 159              		.loc 1 35 15 is_stmt 0 view .LVU33
+ 160 004c 0E4B     		ldr	r3, .L9+28
+ 161 004e 93F84130 		ldrb	r3, [r3, #65]	@ zero_extendqisi2
+ 162              		.loc 1 35 8 view .LVU34
+ 163 0052 202B     		cmp	r3, #32
+ 164 0054 04D0     		beq	.L8
+ 165              	.L6:
+  36:./Application/Src/application.c ****         HAL_UART_Transmit_DMA(&huart1, (uint8_t*)&vofa, sizeof(vofa));
+  37:./Application/Src/application.c ****     }
+  38:./Application/Src/application.c ****     old_adc_read = vofa.val[0];
+ 166              		.loc 1 38 5 is_stmt 1 view .LVU35
+ 167              		.loc 1 38 28 is_stmt 0 view .LVU36
+ 168 0056 094B     		ldr	r3, .L9+16
+ 169 0058 1A68     		ldr	r2, [r3]	@ float
+ 170              		.loc 1 38 18 view .LVU37
+ 171 005a 0C4B     		ldr	r3, .L9+32
+ 172 005c 1A60     		str	r2, [r3]	@ float
+  39:./Application/Src/application.c **** }...
+ 173              		.loc 1 39 1 view .LVU38
+ 174 005e 70BD     		pop	{r4, r5, r6, pc}
+ 175              	.L8:
+  36:./Application/Src/application.c ****         HAL_UART_Transmit_DMA(&huart1, (uint8_t*)&vofa, sizeof(vofa));
+ 176              		.loc 1 36 9 is_stmt 1 view .LVU39
+ 177 0060 2C22     		movs	r2, #44
+ 178 0062 2946     		mov	r1, r5
+ 179 0064 0848     		ldr	r0, .L9+28
+ 180 0066 FFF7FEFF 		bl	HAL_UART_Transmit_DMA
+ 181              	.LVL15:
+ 182 006a F4E7     		b	.L6
+ 183              	.L10:
+ 184              		.align	2
+ 185              	.L9:
+ 186 006c 00000000 		.word	adc1_buffer
+ 187 0070 00F07F45 		.word	1166012416
+ 188 0074 00004040 		.word	1077936128
+ 189 0078 00003041 		.word	1093664768
+ 190 007c 00000000 		.word	vofa
+ 191 0080 52B89E3F 		.word	1067366482
+ARM GAS  /tmp/ccV3a3oL.s 			page 5
 
 
- 201              		.loc 1 31 1 view .LVU48
- 202 0090 70BD     		pop	{r4, r5, r6, pc}
- 203              	.L8:
-  28:./Application/Src/application.c ****         HAL_UART_Transmit_DMA(&huart1, (uint8_t*)&vofa, sizeof(vofa));
- 204              		.loc 1 28 9 is_stmt 1 view .LVU49
- 205 0092 2C22     		movs	r2, #44
- 206 0094 2146     		mov	r1, r4
- 207 0096 0A48     		ldr	r0, .L9+32
- 208 0098 FFF7FEFF 		bl	HAL_UART_Transmit_DMA
- 209              	.LVL21:
- 210 009c F4E7     		b	.L6
- 211              	.L10:
- 212 009e 00BF     		.align	2
- 213              	.L9:
- 214 00a0 00000000 		.word	adc1_buffer
- 215 00a4 00F07F45 		.word	1166012416
- 216 00a8 B81E5540 		.word	1079320248
- 217 00ac 0000A03F 		.word	1067450368
- 218 00b0 CCCCCC3D 		.word	1036831948
- 219 00b4 00000000 		.word	old_adc_read
- 220 00b8 00000000 		.word	vofa
- 221 00bc 00003041 		.word	1093664768
- 222 00c0 00000000 		.word	huart1
- 223              		.cfi_endproc
- 224              	.LFE66:
- 226              		.global	adc1_buffer
- 227              		.section	.bss.adc1_buffer,"aw",%nobits
- 228              		.align	2
- 231              	adc1_buffer:
- 232 0000 00000000 		.space	6
- 232      0000
- 233              		.global	old_adc_read
- 234              		.section	.bss.old_adc_read,"aw",%nobits
- 235              		.align	2
- 238              	old_adc_read:
- 239 0000 00000000 		.space	4
- 240              		.global	vofa
- 241              		.section	.bss.vofa,"aw",%nobits
- 242              		.align	2
- 245              	vofa:
- 246 0000 00000000 		.space	44
- 246      00000000 
- 246      00000000 
- 246      00000000 
- 246      00000000 
- 247              		.text
- 248              	.Letext0:
- 249              		.file 2 "C:/thirdpartyLibs/arm-gnu-toolchain-15.2/arm-none-eabi/include/machine/_default_types.h"
- 250              		.file 3 "C:/thirdpartyLibs/arm-gnu-toolchain-15.2/arm-none-eabi/include/sys/_stdint.h"
- 251              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 252              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 253              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 254              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 255              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
- 256              		.file 9 "Core/Inc/usart.h"
- 257              		.file 10 "Core/Inc/tim.h"
- 258              		.file 11 "Application/Inc/application.h"
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 6
-
-
- 259              		.file 12 "C:/thirdpartyLibs/arm-gnu-toolchain-15.2/arm-none-eabi/include/string.h"
- 260              		.file 13 "<built-in>"
-ARM GAS  C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s 			page 7
+ 192 0084 0000A040 		.word	1084227584
+ 193 0088 00000000 		.word	huart1
+ 194 008c 00000000 		.word	old_adc_read
+ 195              		.cfi_endproc
+ 196              	.LFE66:
+ 198              		.global	adc1_buffer
+ 199              		.section	.bss.adc1_buffer,"aw",%nobits
+ 200              		.align	2
+ 203              	adc1_buffer:
+ 204 0000 00000000 		.space	6
+ 204      0000
+ 205              		.global	old_adc_read
+ 206              		.section	.bss.old_adc_read,"aw",%nobits
+ 207              		.align	2
+ 210              	old_adc_read:
+ 211 0000 00000000 		.space	4
+ 212              		.global	vofa
+ 213              		.section	.bss.vofa,"aw",%nobits
+ 214              		.align	2
+ 217              	vofa:
+ 218 0000 00000000 		.space	44
+ 218      00000000 
+ 218      00000000 
+ 218      00000000 
+ 218      00000000 
+ 219              		.text
+ 220              	.Letext0:
+ 221              		.file 2 "/home/leo/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/machine/
+ 222              		.file 3 "/home/leo/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/sys/_std
+ 223              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 224              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 225              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 226              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 227              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 228              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 229              		.file 10 "Core/Inc/usart.h"
+ 230              		.file 11 "Core/Inc/tim.h"
+ 231              		.file 12 "Application/Inc/application.h"
+ 232              		.file 13 "/home/leo/arm-gnu-toolchain-15.2.rel1-x86_64-arm-none-eabi/arm-none-eabi/include/string.
+ 233              		.file 14 "<built-in>"
+ARM GAS  /tmp/ccV3a3oL.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 application.c
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:19     .text.controller_init:00000000 $t
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:25     .text.controller_init:00000000 controller_init
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:68     .text.controller_init:0000002c $d
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:245    .bss.vofa:00000000 vofa
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:74     .text.controller_step:00000000 $t
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:80     .text.controller_step:00000000 controller_step
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:214    .text.controller_step:000000a0 $d
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:231    .bss.adc1_buffer:00000000 adc1_buffer
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:238    .bss.old_adc_read:00000000 old_adc_read
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:228    .bss.adc1_buffer:00000000 $d
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:235    .bss.old_adc_read:00000000 $d
-C:\Users\Xuleo\AppData\Local\Temp\ccoopNsd.s:242    .bss.vofa:00000000 $d
+     /tmp/ccV3a3oL.s:19     .text.controller_init:00000000 $t
+     /tmp/ccV3a3oL.s:25     .text.controller_init:00000000 controller_init
+     /tmp/ccV3a3oL.s:74     .text.controller_init:00000038 $d
+     /tmp/ccV3a3oL.s:217    .bss.vofa:00000000 vofa
+     /tmp/ccV3a3oL.s:81     .text.controller_step:00000000 $t
+     /tmp/ccV3a3oL.s:87     .text.controller_step:00000000 controller_step
+     /tmp/ccV3a3oL.s:186    .text.controller_step:0000006c $d
+     /tmp/ccV3a3oL.s:203    .bss.adc1_buffer:00000000 adc1_buffer
+     /tmp/ccV3a3oL.s:210    .bss.old_adc_read:00000000 old_adc_read
+     /tmp/ccV3a3oL.s:200    .bss.adc1_buffer:00000000 $d
+     /tmp/ccV3a3oL.s:207    .bss.old_adc_read:00000000 $d
+     /tmp/ccV3a3oL.s:214    .bss.vofa:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
 HAL_TIM_PWM_Start
+HAL_GPIO_WritePin
 htim1
 __aeabi_ui2f
 __aeabi_fdiv
 __aeabi_fmul
 __aeabi_fsub
-__aeabi_fadd
 HAL_UART_Transmit_DMA
 huart1
