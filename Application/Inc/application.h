@@ -9,11 +9,19 @@
 #include <tim.h>
 #include <gpio.h>
 #include <stm32f1xx_hal_uart.h>
+#include <user_can.h>
 
 typedef struct __attribute__((packed)) VOFA_REPORT{
     float val[10]; // used + reserved
     unsigned char vofaTail[4];
 }VOFA_REPORT;
+
+typedef struct __attribute__((packed)) power_report
+{
+    float voltage;
+    float current;
+}power_report;
+
 
 extern VOFA_REPORT vofa;
 extern uint16_t adc1_buffer[3]; // only three ports used for dma
